@@ -1,5 +1,7 @@
 ### job4j_articles
 
+[![Build Status](https://app.travis-ci.com/PerpetuumEbner/job4j_articles.svg?branch=main)](https://app.travis-ci.com/PerpetuumEbner/job4j_articles)
+
 #### Описание
 
 Программа генерирует статьи из слов. Слова и статьи хранятся в базе данных <a href="http://hsqldb.org/">HQLDB</a>, хранимой в виде
