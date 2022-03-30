@@ -7,7 +7,6 @@ import ru.job4j.articles.model.Word;
 import ru.job4j.articles.service.generator.ArticleGenerator;
 import ru.job4j.articles.store.Store;
 
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class SimpleArticleService implements ArticleService {
@@ -26,8 +25,7 @@ public class SimpleArticleService implements ArticleService {
         var words = wordStore.findAll();
         var articles = IntStream.iterate(0, i -> i < count, i -> i + 1)
                 .peek(i -> LOGGER.info("Сгенерирована статья № {}", i))
-                .mapToObj((x) -> articleGenerator.generate(words))
-                .collect(Collectors.toList());
+                .mapToObj((x) -> articleGenerator.generate(words));
         articles.forEach(articleStore::save);
     }
 }
